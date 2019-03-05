@@ -72,10 +72,10 @@ def loadFileFromPath(filePath):
 def computeAT(truthVector, testVector):
 
     (r,pval) = scipy.stats.pearsonr(truthVector, testVector)
-    AT_CC = r[0]
+    AT_CC = np.float64(r[0])
     #print(AT_CC)
     
-    AT_MAE = np.mean(np.absolute(truthVector-testVector))
+    AT_MAE = np.float64(np.mean(np.absolute(truthVector-testVector)))
     #print(AT_MAE)
 
     metrics = [
@@ -103,10 +103,10 @@ def computeAT(truthVector, testVector):
 def computeRT(truthVector, testVector):
 
     (r,pval) = scipy.stats.pearsonr(truthVector, testVector)
-    RT_CC = r[0]
+    RT_CC = np.float64(r[0])
     #print(RT_CC)
     
-    RT_MAE = np.mean(np.absolute(truthVector-testVector))
+    RT_MAE = np.float64(np.mean(np.absolute(truthVector-testVector)))
     #print(RT_MAE)
 
     metrics = [
