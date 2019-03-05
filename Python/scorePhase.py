@@ -39,7 +39,7 @@ def checkFile(truthPath, testPath):
 
 
 
-def scoreP1(truthPath, testPath, FileType):
+def scoreP(truthPath, testPath, FileType):
     truthMatrix = loadFileFromPath(truthPath)
     testMatrix = loadFileFromPath(testPath)
 
@@ -83,11 +83,11 @@ def score(truthDir, testDir):
 
         checkFile(truthPath, testPath)
 
-        if PhaseNum == '1':
-            metrics=scoreP1(truthPath, testPath, FileType)
+        if PhaseNum == '1' or PhaseNum == '2':
+            metrics=scoreP(truthPath, testPath, FileType)
         else:
             raise ScoreException(
-                'Error: Only scoring for phase 1 is implemented.')
+                'Error: Only scoring for phases 1 and 2 is implemented.')
 
         #print(metrics)
         #print(FileType)
